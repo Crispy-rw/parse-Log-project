@@ -1,0 +1,115 @@
+[LOG START]
+[2022-05-20 13:14:30] MTNRW_Model::Handler Function Call With Data Set array (
+  'requesttype' => 'pull',
+  'sessionId' => '16530444702809298',
+  'msisdn' => '250788966090',
+  'newRequest' => '1',
+  'flowState' => 'FD',
+  'subscriberInput' => '737',
+  'vendor' => 'mtn_rw',
+)
+[2022-05-20 13:14:30] MTNRW_Model::Handler ManageRequestSession Returning Status 0
+[2022-05-20 13:14:30] COREUSSD::DisplayMenu GetFullStateByID Returning Array for the menu array (
+  0 =>
+  array (
+    'state_id' => '1',
+    'state_type' => 'input',
+    'state_title' => 'Group Number Entry Point',
+    'state_indicator' => 'FC',
+    'input_type' => 'numeric',
+    'input_field_name' => 'group_code',
+    'text_en' => 'Ikaze muri Gwiza, [NAME];Shyiramo inomero yitsinda ryawe/Welcome To Gwiza, [NAME]; Please enter your group code.(****)',
+    'text_fr' => 'Welcome To Gwiza, [NAME]; Please enter your group code to continue. (****)/Ikaze muri Gwiza, [NAME];Shyiramo inomero yitsinda ryawe (****)',
+    'text_kin' => 'Ikaze muri Gwiza, [NAME];Shyiramo inomero yitsinda ryawe/Welcome To Gwiza, [NAME]; Please enter your group code.(****)',
+    'fxn_call_flag' => '1',
+    'call_fxn_name' => 'VerifyMsisdn',
+    'api_call_flag' => '1',
+    'api_endpoint' => '/members/bymsisdn/:msisdn',
+    'request_method' => 'GET',
+    'request_params' => 'msisdn',
+    'code' => '731',
+    'fxn_type' => NULL,
+    'default_resp_code' => '0',
+    'referenced_fields' => '',
+    'status' => 'successful',
+  ),
+)
+[2022-05-20 13:14:30] COREUSSD::DisplayMenu PrepareMenu Required to make remote function call to VerifyMsisdn
+[2022-05-20 13:14:30] CoreSavings::CompleteRequest Fired For  With Data NULL
+[2022-05-20 13:14:30] CoreSavings:: Test params contentarray (
+  'requesttype' => 'pull',
+  'sessionId' => '16530444702809298',
+  'msisdn' => '250788966090',
+  'newRequest' => '1',
+  'flowState' => 'FD',
+  'subscriberInput' => '737',
+  'vendor' => 'mtn_rw',
+  'execlogfile' => 'systemlog/tmp/2022_05_20/execution_log_file_mtn_rw_250788966090.txt',
+  'endpoint' => '/members/bymsisdn/250788966090',
+  'ep' => '/members/bymsisdn/:msisdn',
+  'source' => 'USSD',
+  'request' => 'GET',
+)
+[2022-05-20 13:14:30] CoreSavings::CompleteRequest Preparing to send Request null To http://197.243.14.45:7378/production/gwiza-api/members/members/bymsisdn/250788966090
+[2022-05-20 13:14:30] CoreSavings::SendGetByCURL Returning Took 0.149168 seconds to send a request to http://197.243.14.45:7378/production/gwiza-api/members/members/bymsisdn/250788966090
+[2022-05-20 13:14:30] CoreSavings::SendGetByCURL response content '{"status_code":200,"ussd_resp_code":731,"response_errormsg":"Successful","data":{"member_id":45080,"member_name":"Eliab BAZIRAMWABO","language":"kin","linked_msisdn":"250788966090","status":"active"}}'
+[2022-05-20 13:14:30] CoreSavings::CompleteRequest SendByCURL Response XML {"status_code":200,"ussd_resp_code":731,"response_errormsg":"Successful","data":{"member_id":45080,"member_name":"Eliab BAZIRAMWABO","language":"kin","linked_msisdn":"250788966090","status":"active"}}
+[2022-05-20 13:14:30] CoreSavings::ParseRequest Fired for {"status_code":200,"ussd_resp_code":731,"response_errormsg":"Successful","data":{"member_id":45080,"member_name":"Eliab BAZIRAMWABO","language":"kin","linked_msisdn":"250788966090","status":"active"}}
+[2022-05-20 13:14:30] CoreSavings::CompleteRequest Response Array array (
+  'status_code' => 200,
+  'ussd_resp_code' => 731,
+  'response_errormsg' => 'Successful',
+  'data' =>
+  array (
+    'member_id' => 45080,
+    'member_name' => 'Eliab BAZIRAMWABO',
+    'language' => 'kin',
+    'linked_msisdn' => '250788966090',
+    'status' => 'active',
+  ),
+)
+[2022-05-20 13:14:30] COREUSSD::Externalfunction call VerifyMsisdn: Result array (
+  'responsecode' => 731,
+  'member_name' => 'Eliab BAZIRAMWABO',
+)
+[2022-05-20 13:14:30] COREUSSD::GetFullStateByRCode call Get Response Message Call Result array (
+  0 =>
+  array (
+    'state_id' => '1',
+    'state_type' => 'input',
+    'state_title' => 'Group Number Entry Point',
+    'state_indicator' => 'FC',
+    'input_type' => 'numeric',
+    'input_field_name' => 'group_code',
+    'text_en' => 'Ikaze muri Gwiza, [NAME];Shyiramo inomero yitsinda ryawe/Welcome To Gwiza, [NAME]; Please enter your group code.(****)',
+    'text_fr' => 'Welcome To Gwiza, [NAME]; Please enter your group code to continue. (****)/Ikaze muri Gwiza, [NAME];Shyiramo inomero yitsinda ryawe (****)',
+    'text_kin' => 'Ikaze muri Gwiza, [NAME];Shyiramo inomero yitsinda ryawe/Welcome To Gwiza, [NAME]; Please enter your group code.(****)',
+    'fxn_call_flag' => '1',
+    'call_fxn_name' => 'VerifyMsisdn',
+    'api_call_flag' => '1',
+    'api_endpoint' => '/members/bymsisdn/:msisdn',
+    'request_method' => 'GET',
+    'request_params' => 'msisdn',
+    'code' => '731',
+    'fxn_type' => NULL,
+    'default_resp_code' => '0',
+    'referenced_fields' => '',
+    'status' => 'successful',
+  ),
+)
+[2022-05-20 13:14:30] Model::OperationWatch called for state ID: 1 With Params: NULL
+[2022-05-20 13:14:30] Model::SetCurrentState Initial State Setting With Dataarray (
+  'session_id' => '16530444702809298',
+  'telephone_number' => '250788966090',
+  'current_state' => 1,
+)
+[2022-05-20 13:14:30] COREUSSD::DisplayMenu PrepareMenu Session Language Is text_kin
+[2022-05-20 13:14:30] COREUSSD::ReplacePlaceHolders Fired for Ikaze muri Gwiza, [NAME];Shyiramo inomero yitsinda ryawe/Welcome To Gwiza, [NAME]; Please enter your group code.(****) With Data array (
+  'responsecode' => 731,
+  'member_name' => 'Eliab BAZIRAMWABO',
+)
+[2022-05-20 13:14:30] COREUSSD::MenuOptionHandler Initial Session Call. Returned New State ...1
+[2022-05-20 13:14:30] MTNRW_Model::Handler Returning Response <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response><msisdn>250788966090</msisdn><sessionid>16530444702809298</sessionid><transactionid/><freeflow><freeflowState>FC</freeflowState></freeflow><applicationResponse>Ikaze muri Gwiza, Eliab BAZIRAMWABO;Shyiramo inomero yitsinda ryawe/Welcome To Gwiza, Eliab BAZIRAMWABO; Please enter your group code.(****)</applicationResponse></response>
+
+[LOG STOP]
